@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-
+import { Row, Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import './App.css';
 
@@ -56,7 +56,7 @@ function App() {
           <p className="p2">
             Passionate about building user-friendly applications and <br />
             exploring modern web technologies. Currently pursuing <br />
-            my studies in software engineering with a strong interest in front-end development,
+            my studies in BSc Computing with a strong interest in front-end development,
             UI/UX design, and problem-solving.
           </p>
           <div className="intro-image">
@@ -94,6 +94,39 @@ function App() {
 
       </div>
     </section>
+   
+  
+  {/* Education section */}
+  <center>
+<section id="education" className="education-section my-5 py-5">
+  <div className="container">
+    <h2 className="section-title text-center mb-4 fw-bold">Education</h2>
+    <div className="row row-cols-1 row-cols-md-2 g-4">
+      {[
+        { degree: "BSc Computing (Software Engineer Pathway)", institute: "NIBM", duration: "2025 - 2027" },
+        { degree: "Higher National Diploma in Software Engineering", institute: "NIBM", duration: "2024 - 2025" },
+        { degree: "Diploma in Software Engineering", institute: "NIBM", duration: "Aug 2022 - Dec 2023" },
+        { degree: "National Vocational Qualification in ICT Level-3", institute: "NVQ", duration: "2021" },
+        { degree: "G.C.E. Advanced Level", institute: "Kolonnawa Balika Vidyalaya", duration: "2019" },
+        { degree: "G.C.E. Ordinary Level", institute: "Kolonnawa Balika Vidyalaya", duration: "2016" }
+      ].map((edu, index) => (
+        <div className="col" key={index}>
+          <div className="card shadow-sm border-0 rounded-4 h-100">
+            <div className="card-body">
+              <h5 className="card-title fw-semibold">{edu.degree}</h5>
+              <h6 className="card-subtitle mb-2 text-muted">{edu.institute}</h6>
+              {edu.duration && (
+                <p className="card-text text-secondary">{edu.duration}</p>
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+</center>
+
 
 {/* project */}
 <section id="projects" className="proj-cards background-image">
@@ -233,7 +266,63 @@ function App() {
           </a>
         </div>
       </div>
+     <section id="contact" className="contact-section py-5 bg-light">
+  <div className="container">
+    <div className="row justify-content-center">
+      <div className="col-md-8 col-lg-6">
+        <div className="card shadow-sm rounded-4 border-0">
+          <div className="card-body p-4">
+            <h2 className="text-center mb-3 fw-bold">Contact Me</h2>
+            <p className="text-center text-muted mb-4">
+              Feel free to reach out directly at <strong>mihikamadhavi123@gmail.com</strong> <br />
+              or drop your message below 
+            </p>
+            <form>
+              <div className="mb-3">
+                <label htmlFor="fname" className="form-label">Full Name</label>
+                <input
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  placeholder="Your full name"
+                  className="form-control"
+                />
+              </div>
 
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="yourname@gmail.com"
+                  className="form-control"
+                />
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="message" className="form-label">Your Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Type your message here..."
+                  className="form-control"
+                ></textarea>
+              </div>
+
+              <div className="d-grid">
+                <button type="submit" className="btn btn-lg rounded-pill">
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       
     </div>
   );

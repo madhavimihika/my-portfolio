@@ -243,7 +243,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
-
+.education-section ul {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+}
 .proj-cards {
   margin: 50px 100px;
 }
@@ -279,6 +283,18 @@ body {
 }
 
 .project-card-button:hover {
+  background-color: #4A102A;
+}
+#contact textarea:focus,
+#contact input:focus {
+  border-color: #4A102A;
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.25);
+}
+.contact button{
+  color:#3A0519;
+
+}
+#contact button:hover {
   background-color: #4A102A;
 }
 
